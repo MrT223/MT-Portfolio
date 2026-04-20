@@ -1,17 +1,17 @@
 /**
- * Reusable section header with badge, title, and optional highlight/description.
+ * Reusable section header with badge, title, optional highlight and description.
  */
 export default function SectionHeader({ badge, title, highlight, description }) {
   return (
-    <div className="text-center mb-20">
-      <span className="inline-block px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-mono text-white/50 uppercase tracking-widest mb-6">
+    <div className="text-center mb-16">
+      <span className="inline-block px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] font-mono text-white/40 uppercase tracking-[0.2em] mb-5">
         {badge}
       </span>
-      <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
+      <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
         {title} <span className="gradient-text">{highlight}</span>
       </h2>
       {description && (
-        <p className="text-white/40 mt-4 max-w-lg mx-auto">{description}</p>
+        <p className="text-white/35 text-sm mt-3 max-w-md mx-auto leading-relaxed">{description}</p>
       )}
     </div>
   );
