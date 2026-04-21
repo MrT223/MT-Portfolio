@@ -58,15 +58,16 @@ export const PROJECTS_DATA = {
   title: "Các dự án",
 
   highlight: "nổi bật",
-  description: "Những dự án tiêu biểu tôi đã thực hiện.",
+  description: "\u00A0",
   projects: [
     {
-      num: '01', type: 'Web Application', title: 'E-Commerce Platform',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.',
-      tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+      num: '01', type: 'Web Application', title: 'HCMUE Youth Portal',
+      desc: 'Website chính thức của Đoàn Thanh niên - Hội Sinh viên Trường Đại học Sư phạm TP.HCM. Cung cấp tin tức, sự kiện và hoạt động đoàn hội.',
+      tags: ['Node.js', 'PostgreSQL', 'Docker', 'TailwindCSS'],
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />,
-      github: "#",
-      demo: "#"
+      github: null,
+      demo: "https://youth.hcmue.edu.vn/",
+      demoLabel: "Truy cập"
     },
     {
       num: '02', type: 'Mobile App', title: 'Task Management App',

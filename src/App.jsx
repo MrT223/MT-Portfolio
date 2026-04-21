@@ -19,7 +19,7 @@ export default function App() {
       <Navbar />
 
       {/* Page sections */}
-      <main>
+      <main className="flex flex-col gap-16">
         <Hero />
         <About />
         <Projects />

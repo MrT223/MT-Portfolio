@@ -16,7 +16,8 @@ export function useScrollReveal(animationClass = 'revealed', options = {}) {
       ([entry]) => {
         if (entry.isIntersecting) {
           entry.target.classList.add(animationClass);
-          observer.unobserve(entry.target);
+        } else {
+          entry.target.classList.remove(animationClass);
         }
       },
       {
@@ -53,7 +54,8 @@ export function useScrollRevealChildren(selector, animationClass = 'revealed') {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add(animationClass);
-            observer.unobserve(entry.target);
+          } else {
+            entry.target.classList.remove(animationClass);
           }
         });
       },
