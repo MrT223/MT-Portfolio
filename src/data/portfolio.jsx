@@ -71,12 +71,14 @@ export const PROJECTS_DATA = {
       image: "/project-screenshot-01.png"
     },
     {
-      num: '02', type: 'Mobile App', title: 'Task Management App',
-      desc: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.',
-      tags: ['React Native', 'TypeScript', 'Firebase'],
-      icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />,
-      github: "#",
-      demo: "#"
+      num: '02', type: 'Full-Stack App', title: 'Internet Coffee Manager',
+      desc: 'Hệ thống quản lý quán cà phê internet toàn diện, tích hợp quản lý khách hàng, dịch vụ, menu và báo cáo doanh thu chi tiết.',
+      tags: ['React', 'Node.js', 'TailwindCSS', 'Google AI'],
+      icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2 1m2-1l-2-1m2 1v2.5M7 10l-2 1m2-1l-2-1m2 1v2.5M7 4L5 5m2-1L5 3m2 1v2.5M4 7l-2 1m2-1l-2-1m2 1v2.5" />,
+      github: "https://github.com/MrT223/Internet-Coffee-Manager",
+      demo: "#",
+      demoLabel: "Private Demo",
+      image: "/project-screenshot-02.png"
     },
     {
       num: '03', type: 'Dashboard', title: 'Analytics Dashboard',
