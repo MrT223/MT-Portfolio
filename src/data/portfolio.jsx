@@ -67,7 +67,8 @@ export const PROJECTS_DATA = {
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />,
       github: null,
       demo: "https://youth.hcmue.edu.vn/",
-      demoLabel: "Truy cập"
+      demoLabel: "Truy cập",
+      image: "/project-screenshot-01.png"
     },
     {
       num: '02', type: 'Mobile App', title: 'Task Management App',

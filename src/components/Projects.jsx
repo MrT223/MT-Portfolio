@@ -11,15 +11,19 @@ function ProjectCard({ project, reverse }) {
         {/* Image */}
         <div className={reverse ? 'lg:order-2' : 'lg:order-1'}>
           <div className="group rounded-2xl overflow-hidden border border-white/[0.06] hover:border-white/15 transition-all duration-500 relative">
-            <div className="img-placeholder aspect-video flex items-center justify-center">
-              <div className="text-center p-4">
-                <svg className="w-10 h-10 mx-auto text-white/15 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">{project.icon}</svg>
-                <p className="text-white/20 text-xs font-mono truncate">project-screenshot-{project.num}.png</p>
+            {project.image ? (
+              <div className="relative">
+                <img src={project.image} alt={project.title} className="aspect-video w-full object-cover object-top" />
+                <div className="absolute inset-0 img-shimmer pointer-events-none" />
               </div>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-5">
-              <span className="px-4 py-1.5 rounded-full bg-white text-black text-xs font-medium cursor-pointer">Xem chi tiết →</span>
-            </div>
+            ) : (
+              <div className="img-placeholder aspect-video flex items-center justify-center">
+                <div className="text-center p-4">
+                  <svg className="w-10 h-10 mx-auto text-white/15 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">{project.icon}</svg>
+                  <p className="text-white/20 text-xs font-mono truncate">project-screenshot-{project.num}.png</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
