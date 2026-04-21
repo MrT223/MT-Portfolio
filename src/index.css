@@ -290,8 +290,9 @@ section[id] {
   pointer-events: auto;
 }
 
-.group:hover .ygo-card-wrapper {
-  transform: translateY(0);
+.group:hover .ygo-card-wrapper,
+.profile-perspective.is-locked .ygo-card-wrapper {
+  transform: translateY(0) !important;
 }
 
 .ygo-card-inner {

@@ -40,16 +40,16 @@ export default function About() {
           {/* Left: Image + Stats */}
           <div ref={leftRef} className="reveal-left lg:col-span-2">
             <div 
-              className="rounded-2xl overflow-hidden border border-white/10 aspect-square relative group profile-perspective select-none"
+              className={`rounded-2xl overflow-hidden border border-white/10 aspect-square relative group profile-perspective select-none ${isProcessing ? 'is-locked' : ''}`}
               onMouseEnter={() => {
                 if (timeoutRef.current) clearTimeout(timeoutRef.current);
                 setIsFlipped(false);
-                setIsReplaced(false);
                 setIsProcessing(false);
               }}
               onMouseLeave={() => {
                 if (isProcessing) return;
                 setIsFlipped(false);
+                setIsReplaced(false);
               }}
               onMouseDown={(e) => e.preventDefault()}
             >
@@ -63,7 +63,7 @@ export default function About() {
 
               {/* YGO Slide Overlay + Flip Card */}
               {!isReplaced && (
-                <div className="ygo-card-wrapper transition-all duration-500">
+                <div className="ygo-card-wrapper">
                   <div 
                     className={`ygo-card-inner ${isFlipped ? 'is-flipped' : ''}`}
                     onClick={() => {
