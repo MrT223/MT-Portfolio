@@ -96,7 +96,7 @@ export const PROJECTS_DATA = {
 export const TECH_STACK_DATA = {
   title: "Ngôn ngữ &",
   highlight: "Công nghệ",
-  description: "Bộ kỹ năng chuyên môn và các công nghệ tôi sử dụng để xây dựng sản phẩm.",
+  description: "\u00A0",
   techs: [
     { name: 'JavaScript', icon: <path fill="currentColor" d="M11.666 4.667v6.333c0 .828.672 1.5 1.5 1.5s1.5-.672 1.5-1.5V4.667h1.5v6.333a3 3 0 01-6 0V4.667h1.5zM2.834 8.5h6.332v1.5H4.334v2.5H9.166v1.5H2.834V8.5z"/> },
     { name: 'TypeScript', icon: <path fill="currentColor" d="M3 3h18v18H3V3zm15.12 14.28V6.2h-1.63v1.65h-1.33V6.2h-1.63v11.08h1.63v-1.63h1.33v1.63h1.63zM9.53 17.28v-9.33H11.2v9.33H9.53z"/> },
