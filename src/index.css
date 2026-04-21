@@ -305,10 +305,6 @@ section[id] {
   cursor: pointer;
 }
 
-.group:not(:hover) .ygo-card-inner {
-  transition: none !important;
-}
-
 .ygo-card-inner.is-flipped {
   transform: rotateY(180deg);
 }
