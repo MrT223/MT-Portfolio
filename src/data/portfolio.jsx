@@ -81,29 +81,25 @@ export const PROJECTS_DATA = {
       image: "/project-screenshot-02.png"
     },
     {
-      num: '03', type: 'Full-Stack App', title: 'Cine Galaxy',
+      num: '03', type: 'Full-Stack App', title: 'Ciname Galyxa',
       desc: 'Hệ thống quản lý và đặt vé xem phim hiện đại với tính năng đặt ghế trực quan, quản lý rạp, combo bắp nước và tích hợp hệ thống điểm thưởng thành viên.',
       tags: ['Next.js 14', 'Node.js', 'MongoDB', 'TailwindCSS'],
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M7 4V20M17 4V20M3 8H7M17 8H21M3 12H21M3 16H7M17 16H21M4 20H20C21.1046 20 22 19.1046 22 18V6C22 4.89543 21.1046 4 20 4H4C2.89543 4 2 4.89543 2 6V18C2 19.1046 2.89543 20 4 20Z" />,
       github: "https://github.com/MinQuan-kun/Ciname_Galyxa.git",
       demo: "https://ciname-galyxa.onrender.com",
-      demoLabel: "Live Demo"
+      demoLabel: "Live Demo",
+      image: "/project-screenshot-03.png"
     },
   ]
 };
 
 export const CERTS_DATA = {
-  title: "Chứng chỉ &",
-
-  highlight: "Thành tựu",
-  description: "Những chứng chỉ và thành tựu nổi bật.",
+  title: "Vinh danh &",
+  highlight: "Chứng nhận",
+  description: "Các chứng chỉ chuyên môn và giải thưởng trong quá trình phát triển.",
   certs: [
-    { year: '2024', title: 'AWS Solutions Architect', issuer: 'Amazon Web Services', desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /> },
-    { year: '2023', title: 'Google Cloud Developer', issuer: 'Google Cloud', desc: 'Duis aute irure dolor in reprehenderit in voluptate velit.', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /> },
-    { year: '2023', title: 'Meta Front-End Developer', issuer: 'Meta (Coursera)', desc: 'Excepteur sint occaecat cupidatat non proident.', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /> },
-    { year: '2022', title: 'Docker Certified Associate', issuer: 'Docker Inc.', desc: 'Sed ut perspiciatis unde omnis iste natus error sit.', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" /> },
-    { year: '2022', title: 'Scrum Master Certified', issuer: 'Scrum Alliance', desc: 'Nemo enim ipsam voluptatem quia voluptas sit.', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /> },
-    { year: '2021', title: 'CompTIA Security+', issuer: 'CompTIA', desc: 'At vero eos et accusamus et iusto odio dignissimos.', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /> },
+    { year: '2024', title: 'Fullstack Web Development', issuer: 'Hồ Chí Minh University of Education', desc: 'Chứng chỉ hoàn thành chương trình đào tạo chuyên sâu về phát triển ứng dụng web hiện đại.', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /> },
+    { year: '2023', title: 'Top 10 Hackathon Participant', issuer: 'University Tech Club', desc: 'Đạt giải cao trong cuộc thi lập trình giải quyết các vấn đề thực tiễn của sinh viên.', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" /> },
   ]
 };
 
@@ -113,8 +109,8 @@ export const CONTACT_DATA = {
   highlight: "kết nối với tôi",
   description: "Luôn sẵn sàng cho những cơ hội hợp tác mới.",
   info: [
-    { label: 'Email', value: 'hello@example.com', href: 'mailto:hello@example.com', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /> },
-    { label: 'Điện thoại', value: '+84 123 456 789', href: 'tel:+84123456789', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /> },
+    { label: 'Email', value: 'contact@maithe.dev', href: 'mailto:contact@maithe.dev', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /> },
+    { label: 'Điện thoại', value: '(+84) 000 000 000', href: 'tel:+84000000000', icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /> },
     { label: 'Vị trí', value: 'TP. Hồ Chí Minh, Việt Nam', href: null, icon: <><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></> },
   ],
   socials: [
@@ -126,7 +122,7 @@ export const CONTACT_DATA = {
 };
 
 export const FOOTER_DATA = {
-  logo: "DevPortfolio",
-  copyright: "© 2024 DevPortfolio. All rights reserved.",
+  logo: "Mai Thế",
+  copyright: `© ${new Date().getFullYear()} Mai Thế. All rights reserved.`,
   links: NAV_LINKS
 };
