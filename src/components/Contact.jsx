@@ -1,112 +1,137 @@
-import { useState } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import SectionHeader from './SectionHeader';
 import { CONTACT_DATA } from '../data/portfolio';
 
-function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => { setSubmitted(false); e.target.reset(); }, 2000);
-  };
+function ChannelCard({ channel, index, featured = false }) {
+  const ref = useScrollReveal();
+  const Tag = channel.href ? 'a' : 'div';
+  const isLink = !!channel.href;
 
   return (
-    <form onSubmit={handleSubmit} className="card-base p-6 space-y-4">
-      <div className="grid sm:grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="name" className="block text-[12px] text-white/40 mb-1.5">Full Name</label>
-          <input type="text" id="name" placeholder="John Doe" className="w-full px-4 py-2.5 text-[14px]" />
-        </div>
-        <div>
-          <label htmlFor="email" className="block text-[12px] text-white/40 mb-1.5">Email</label>
-          <input type="email" id="email" placeholder="email@example.com" className="w-full px-4 py-2.5 text-[14px]" />
-        </div>
-      </div>
-      <div>
-        <label htmlFor="subject" className="block text-[12px] text-white/40 mb-1.5">Subject</label>
-        <input type="text" id="subject" placeholder="Project Inquiry / Collaboration" className="w-full px-4 py-2.5 text-[14px]" />
-      </div>
-      <div>
-        <label htmlFor="message" className="block text-[12px] text-white/40 mb-1.5">Message</label>
-        <textarea id="message" rows={4} placeholder="Your message here..." className="w-full px-4 py-2.5 text-[14px] resize-none" />
-      </div>
-      <button
-        type="submit"
-        className={`w-full py-3 rounded-xl font-semibold text-[14px] transition-all duration-300 cursor-pointer ${
-          submitted ? 'bg-emerald-500 text-white' : 'bg-white text-black hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]'
-        }`}
+    <div
+      ref={ref}
+      className={`reveal ${featured ? 'sm:col-span-2' : ''}`}
+      style={{ transitionDelay: `${index * 100}ms` }}
+    >
+      <Tag
+        {...(isLink ? { href: channel.href, target: channel.href.startsWith('mailto') ? '_self' : '_blank', rel: 'noopener noreferrer' } : {})}
+        className={`contact-card group ${featured ? 'contact-card--featured' : ''}`}
+        style={{ '--accent': channel.color }}
       >
-        {submitted ? 'Sent Successfully! ✓' : 'Send Message'}
-      </button>
-    </form>
+        {/* Animated gradient border on hover */}
+        <div className="contact-card-border" style={{ '--accent': channel.color }} />
+
+        {/* Accent glow */}
+        <div className="contact-card-glow" style={{ background: `radial-gradient(ellipse at 50% 0%, ${channel.color}18 0%, transparent 60%)` }} />
+
+        {/* Content */}
+        <div className="contact-card-inner">
+          {featured ? (
+            /* Featured layout: large icon left, content right */
+            <div className="flex items-center gap-5">
+              <div className="contact-icon contact-icon--lg" style={{ '--accent': channel.color }}>
+                <svg
+                  className="w-7 h-7"
+                  style={{ color: 'rgba(255,255,255,0.45)' }}
+                  fill={channel.iconStroke ? 'none' : 'currentColor'}
+                  stroke={channel.iconStroke ? 'currentColor' : 'none'}
+                  viewBox="0 0 24 24"
+                >
+                  {channel.icon}
+                </svg>
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="text-[15px] font-semibold text-white/90 mb-1 group-hover:text-white transition-colors">
+                  {channel.label}
+                </div>
+                <div className="text-[13px] text-white/30 truncate group-hover:text-white/50 transition-colors">
+                  {channel.username}
+                </div>
+              </div>
+              {isLink && (
+                <div className="contact-arrow">
+                  <svg className="w-4 h-4 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              )}
+            </div>
+          ) : (
+            /* Standard layout: icon top, content below */
+            <>
+              <div className="flex items-center justify-between mb-4">
+                <div className="contact-icon" style={{ '--accent': channel.color }}>
+                  <svg
+                    className="w-5 h-5"
+                    style={{ color: 'rgba(255,255,255,0.45)' }}
+                    fill={channel.iconStroke ? 'none' : 'currentColor'}
+                    stroke={channel.iconStroke ? 'currentColor' : 'none'}
+                    viewBox="0 0 24 24"
+                  >
+                    {channel.icon}
+                  </svg>
+                </div>
+                {isLink && (
+                  <div className="contact-arrow">
+                    <svg className="w-3.5 h-3.5 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 17L17 7M17 7H7M17 7v10" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+              <div className="text-[14px] font-semibold text-white/90 mb-0.5 group-hover:text-white transition-colors">
+                {channel.label}
+              </div>
+              <div className="text-[12px] text-white/30 truncate group-hover:text-white/45 transition-colors">
+                {channel.username}
+              </div>
+            </>
+          )}
+        </div>
+      </Tag>
+    </div>
   );
 }
 
 export default function Contact() {
-  const { title, highlight, description, info, socials } = CONTACT_DATA;
+  const { title, highlight, description, channels } = CONTACT_DATA;
 
   const headerRef = useScrollReveal();
-  const infoRef = useScrollReveal();
-  const formRef = useScrollReveal();
+  const ctaRef = useScrollReveal();
+
+  // Split channels: first 2 as featured (GitHub, LinkedIn), rest as standard
+  const featuredChannels = channels.slice(0, 2);
+  const standardChannels = channels.slice(2);
 
   return (
     <section id="contact" className="relative py-20 overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-white/[0.015] blur-[120px] pointer-events-none" />
+      {/* Background effects */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-white/[0.02] blur-[150px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full bg-white/[0.01] blur-[100px] pointer-events-none" />
 
       <div className="section-container">
         <div ref={headerRef} className="reveal">
           <SectionHeader title={title} highlight={highlight} description={description} />
-
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10">
-          {/* Info */}
-          <div ref={infoRef} className="reveal-left">
-            <h3 className="text-lg font-semibold mb-3">Contact Information</h3>
-            <p className="text-[14px] text-white/35 leading-relaxed mb-6">
-              Feel free to reach out through any of these channels.
-            </p>
+        {/* Bento Grid — unified so all gaps are identical */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          {featuredChannels.map((channel, idx) => (
+            <ChannelCard key={channel.label} channel={channel} index={idx} featured />
+          ))}
+          {standardChannels.map((channel, idx) => (
+            <ChannelCard key={channel.label} channel={channel} index={idx + 2} />
+          ))}
+        </div>
 
-            <div className="flex flex-col gap-3 mb-6">
-              {info.map((item) => {
-                const Tag = item.href ? 'a' : 'div';
-                return (
-                  <Tag
-                    key={item.label}
-                    {...(item.href ? { href: item.href } : {})}
-                    className="group flex items-center gap-3 p-3.5 rounded-xl card-base"
-                  >
-                    <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/[0.08] flex items-center justify-center shrink-0 group-hover:border-white/20 transition-all">
-                      <svg className="w-4 h-4 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">{item.icon}</svg>
-                    </div>
-                    <div className="min-w-0">
-                      <div className="text-[11px] text-white/40">{item.label}</div>
-                      <div className="text-[14px] font-medium truncate">{item.value}</div>
-                    </div>
-                  </Tag>
-                );
-              })}
-            </div>
-
-            {/* Social */}
-            <div className="flex items-center gap-3">
-              {socials.map((s) => (
-                <a key={s.label} href="#" className="w-9 h-9 rounded-full border border-white/[0.08] flex items-center justify-center hover:border-white/25 hover:bg-white/5 transition-all duration-300" aria-label={s.label}>
-                  <svg className="w-4 h-4 text-white/60" fill="currentColor" viewBox="0 0 24 24">{s.icon}</svg>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Form */}
-          <div ref={formRef} className="reveal-right">
-            <ContactForm />
+        {/* Availability CTA */}
+        <div ref={ctaRef} className="reveal mt-16 text-center">
+          <div className="contact-status-badge">
+            <div className="contact-status-dot" />
+            <span className="text-[13px] text-white/40 font-medium">Available for internship & collaboration</span>
           </div>
         </div>
       </div>
     </section>
   );
 }
-
