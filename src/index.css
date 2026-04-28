@@ -567,4 +567,57 @@ input::placeholder, textarea::placeholder {
   50% { opacity: 0.6; box-shadow: 0 0 16px rgba(52, 211, 153, 0.8); }
 }
 
+/* ============================================= */
+/* VOLUME SLIDER                                 */
+/* ============================================= */
+.volume-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  outline: none;
+  transition: background 0.3s ease;
+}
 
+.volume-slider:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  transform: scale(1.2);
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+.volume-slider::-moz-range-thumb:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.volume-slider::-moz-range-track {
+  background: transparent;
+  border: none;
+}

@@ -1,7 +1,7 @@
 import { HERO_DATA } from '../data/portfolio';
 
 export default function Hero() {
-  const { greeting, name, title, description, techStack } = HERO_DATA;
+  const { greeting, name, alias, title, description, techStack } = HERO_DATA;
 
   const scrollTo = (e, id) => {
     e.preventDefault();
@@ -22,6 +22,15 @@ export default function Hero() {
           <span className="block gradient-text opacity-0 mt-1" style={{ animation: 'slide-up 0.8s ease-out 0.4s forwards' }}>
             {name}
           </span>
+          {alias && (
+            <span className="block opacity-0 mt-1" style={{ animation: 'slide-up 0.8s ease-out 0.5s forwards' }}>
+              <span className="inline-flex items-center gap-3 text-xl sm:text-2xl font-mono text-white/30 font-normal tracking-wider">
+                <span className="w-6 h-px bg-white/15" />
+                {alias}
+                <span className="w-6 h-px bg-white/15" />
+              </span>
+            </span>
+          )}
         </h1>
 
         {/* Subtitle — centered */}

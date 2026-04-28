@@ -114,14 +114,33 @@ export default function Contact() {
           <SectionHeader title={title} highlight={highlight} description={description} />
         </div>
 
-        {/* Bento Grid — unified so all gaps are identical */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl mx-auto">
-          {featuredChannels.map((channel, idx) => (
-            <ChannelCard key={channel.label} channel={channel} index={idx} featured />
-          ))}
-          {standardChannels.map((channel, idx) => (
-            <ChannelCard key={channel.label} channel={channel} index={idx + 2} />
-          ))}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-16">
+          {/* Bento Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-3xl w-full">
+            {featuredChannels.map((channel, idx) => (
+              <ChannelCard key={channel.label} channel={channel} index={idx} featured />
+            ))}
+            {standardChannels.map((channel, idx) => (
+              <ChannelCard key={channel.label} channel={channel} index={idx + 2} />
+            ))}
+          </div>
+
+          {/* Decorative GIF - Desktop Only */}
+          <div className="hidden lg:block w-80 flex-shrink-0 animate-float-custom">
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-white/[0.03] blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="relative rounded-3xl overflow-hidden border border-white/[0.05] bg-white/[0.02] p-3 backdrop-blur-sm">
+                <img 
+                  src="/the-herta.gif" 
+                  alt="Herta" 
+                  className="w-full h-auto rounded-2xl opacity-50 group-hover:opacity-100 transition-all duration-700 grayscale group-hover:grayscale-0 scale-95 group-hover:scale-100" 
+                />
+              </div>
+              <div className="mt-6 text-center transform translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+                <p className="text-xs font-mono text-white/30 uppercase tracking-[0.4em]">Kuru Kuru~</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Availability CTA */}
