@@ -31,9 +31,9 @@ export const ABOUT_DATA = {
     { label: "Projects Completed", value: "10+" },
     { label: "Technical Skills", value: "15+" },
   ],
-  profile1: "/profile-01.jpg",
-  profile2: "/profile-02.jpg",
-  ygoBack: "/ygo_back_card.jpg",
+  profile1: `${import.meta.env.BASE_URL}profile-01.jpg`,
+  profile2: `${import.meta.env.BASE_URL}profile-02.jpg`,
+  ygoBack: `${import.meta.env.BASE_URL}ygo_back_card.jpg`,
 
   skills: [
     { 
@@ -72,7 +72,7 @@ export const PROJECTS_DATA = {
       github: null,
       demo: "https://youth.hcmue.edu.vn/",
       demoLabel: "Visit Site",
-      image: "/project-screenshot-01.png"
+      image: `${import.meta.env.BASE_URL}project-screenshot-01.png`
     },
     {
       num: '02', type: 'Full-Stack App', title: 'Internet Coffee Manager',
@@ -82,7 +82,7 @@ export const PROJECTS_DATA = {
       github: "https://github.com/MrT223/Internet-Coffee-Manager",
       demo: "#",
       demoLabel: "Private Demo",
-      image: "/project-screenshot-02.png"
+      image: `${import.meta.env.BASE_URL}project-screenshot-02.png`
     },
     {
       num: '03', type: 'Full-Stack App', title: 'Ciname Galyxa',
@@ -92,7 +92,7 @@ export const PROJECTS_DATA = {
       github: "https://github.com/MinQuan-kun/Ciname_Galyxa.git",
       demo: "https://ciname-galyxa.onrender.com",
       demoLabel: "Live Demo",
-      image: "/project-screenshot-03.png"
+      image: `${import.meta.env.BASE_URL}project-screenshot-03.png`
     },
   ]
 };
@@ -132,7 +132,7 @@ export const ACHIEVEMENTS_DATA = {
       issuer: "HCMUE - Faculty of Information Technology",
       date: "2024",
       desc: "Đề tài: Sử dụng Google Apps Script thiết kế bài kiểm tra tự động",
-      image: "/award-01.jpg",
+      image: `${import.meta.env.BASE_URL}award-01.jpg`,
       icon: <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
     }
   ],

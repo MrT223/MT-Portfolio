@@ -131,7 +131,7 @@ export default function Contact() {
               <div className="absolute -inset-4 bg-white/[0.03] blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <div className="relative rounded-3xl overflow-hidden border border-white/[0.05] bg-white/[0.02] p-3 backdrop-blur-sm">
                 <img 
-                  src="/the-herta.gif" 
+                  src={`${import.meta.env.BASE_URL}the-herta.gif`} 
                   alt="Herta" 
                   className="w-full h-auto rounded-2xl opacity-50 group-hover:opacity-100 transition-all duration-700 grayscale group-hover:grayscale-0 scale-95 group-hover:scale-100" 
                 />
